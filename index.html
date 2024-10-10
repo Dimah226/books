@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./java.js" defer></script>
+    <title>Book Form</title>
+</head>
+<body>
+    <header>
+        <!-- Vous pouvez ajouter du contenu ici -->
+    </header>
+
+    <form action="">
+        <div class="container">
+            <!-- Champ pour le titre du livre -->
+             <div class="test">
+            <div class="inputbox first">
+                <input type="text" required class="title input">
+                <span class="label">Book title</span>
+                <i></i>
+            </div>
+
+            <div class="inputbox">
+                <input type="text" required class="author input">
+                <span class="label">Author name</span>
+                <i></i>
+            </div>
+            
+            <div class="inputbox">
+                <input type="number" required class="pages input">
+                <span class="label">Number of pages</span>
+                <i></i>
+            </div>
+            
+            <div class="inputbox">
+                <select name="read" id="read" class="read input" required>
+                    <option value="" disabled selected></option>
+                    <option value="read">Read</option>
+                    <option value="not-read">Not read</option>
+                </select>
+                <span class="label">Choose an option</span>
+                <i></i>
+                
+            </div>
+            
+            <textarea name="comment" class="input textarea" cols="30" rows="10" placeholder="Write a comment"></textarea>
+
+            <div class="test2">
+            <input type="submit" value="Submit" class="btn">
+            </div>
+        </div>
+        </div>
+    </form>
+    <div class="modality"></div>
+</body>
+</html>

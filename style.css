@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Global Reset for all elements, including their before/after pseudo-elements */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    appearance: none;
+    font: inherit;
+    background: none;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Base settings */
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+    height: fit-content;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    background: #23242a;
+    color: white;
+    padding: 2rem 9%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* For responsive media elements */
+img, video, picture, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Form inputs and buttons */
+input, button, textarea, select {
+    font: inherit;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* Container styles */
+.container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Test box styling */
+.test {
+    background: darkgray;
+    position: relative; /* Nécessaire pour tes éléments */
+    width: 700px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: 4px;
+}
+
+/* Input and select fields */
+.input, select {
+    position: relative; /* Position relative conservée */
+    width: 100%;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    z-index: 10;
+}
+
+/* Label and interactive input styling */
+.label {
+    position: absolute;
+    left: 1rem;
+    bottom: 0.3rem;
+    font-size: 1rem;
+    transition: 0.5s ease;
+}
+
+input:valid + .label,
+input:focus + .label,
+select:valid + .label,
+select:focus + .label {
+    transform: translateY(-2.2rem);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+input:valid + .label,
+select:valid + .label {
+    color: green;
+}
+
+.inputbox {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+i {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+    border-radius: 4px;
+    transition: 0.5s ease;
+}
+
+input:focus ~ i,
+input:valid ~ i,
+select:focus ~ i ,
+select:valid ~ i {
+    height: 40px;
+}
+
+/* Buttons styling */
+.btn {
+    background: aqua;
+    padding: 0.5rem;
+    width: 300px;
+    font-weight: 600;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.btn:hover {
+    box-shadow: 0 0 1rem aqua;
+}
+
+.btn:active {
+    opacity: 0.8;
+    transform: scale(1.03);
+    box-shadow: 0 0 1rem transparent;
+}
+
+/* Textarea styles */
+textarea {
+    transition: 0.5s ease;
+    border-radius: 10px;
+    resize: none;
+}
+
+textarea:focus,
+textarea:not(:placeholder-shown) {
+    background: white;
+}
+
+/* Animation container */
+.container::after {
+    content: "";
+    position: absolute;
+    top: -25%;
+    left: -70%;
+    width: 160%;
+    height: 160%;
+    background:  #45f3ff;
+    z-index: -1;
+    transform-origin: right;
+    animation: animate 6s linear infinite;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: -25%;
+    left: -70%;
+    width: 160%;
+    height: 160%;
+    background:  #ff45e9;
+    z-index: -1;
+    transform-origin: right;
+    animation: animatesee 4s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes animatesee{
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+/* Test box alignment */
+.test2 {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.first{
+    margin-top: 1rem;
+}
+
+
+
+
+.scroll-box {
+    width: 300px;
+    height: 200px; /* La hauteur fixe crée la zone défilable */
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    overflow-y: auto; /* Permet le défilement vertical si nécessaire */
+    overflow-x: hidden; /* Masquer le défilement horizontal */
+    color: #23242a;
+}
+
+/* Optionnel : Style personnalisé pour la scrollbar */
+.scroll-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scroll-box::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.scroll-box::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+
+.modality{
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, 300px);
+    grid-template-rows: repeat(auto-fit, 200px);
+}
+
+.modality span{
+    font-weight: 700;
+    font-size: large;
+    color: brown;
+}
+
+.scroll-box:hover{
+    box-shadow: 0 0 1rem aqua;
+    transform: scale(1.03);
+}
+
+.modality button{
+    background: white;
+    margin: 1rem 0 2rem;
+    font-weight: 600;
+    width: 100px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.modality .delete-btn{
+    background: red;
+    color: white;
+}
+
+.modality .modify-btn{
+    background: lightskyblue;
+    color: white;
+}
+
+.modality button:hover{
+    transform: scale(1.1);
+}
